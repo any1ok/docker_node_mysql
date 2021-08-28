@@ -7,23 +7,26 @@ services:
   postgresql:
     networks:
       - app-tier
-    image: postgres:13
-    container_name: postgresql_container
     restart: always
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
-      - NODE_ENV=development
-      - DB_USER=postgres
-      - DB_PW=password
-      - DB_TYPE=postgres
-      - DB_HOST=postgresql
+      POSTGRES_PASSWORD: "password"
+      TZ: "Asia/Seoul"
   app:
     networks:
       - app-tier
     build:
       context: .
       dockerfile: Dockerfile.dev
+    environment:
+      - NODE_ENV=development
+      - DB_USER=postgres
+      - DB_PW=password
+      - DB_TYPE=postgres
+      - DB_HOST=postgresql
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules # Remove this if you have pure JS dependencies

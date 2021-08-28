@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Getting Started ##### You need to install docker from Docker(https://www.docker.com/). ##### git clone https://github.com/OdysseyJ/web/  << clone repository on your computer ##### docker pull mysql ##### docker-compose up --build << if you want to start server ##### docker-compose down << if you want to close server",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +23,6 @@
     "mysql2": "^2.0.0",
     "sequelize": "^5.21.2",
     "sequelize-cli": "^5.5.1"
-  }
+  },
+  "devDependencies": {}
 }

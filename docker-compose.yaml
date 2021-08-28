@@ -7,6 +7,7 @@ services:
   postgresql:
     networks:
       - app-tier
+    image: postgres:13
     restart: always
     volumes:
       - ./postgresql/data:/var/lib/postgresql/data
@@ -21,12 +22,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    environment:
-      - NODE_ENV=development
-      - DB_USER=postgres
-      - DB_PW=password
-      - DB_TYPE=postgres
-      - DB_HOST=postgresql
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules # Remove this if you have pure JS dependencies

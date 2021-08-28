@@ -4,19 +4,20 @@ networks:
   app-tier:
     driver: bridge
 services:
-  mysql:
+  postgresql:
     networks:
       - app-tier
-    image: mysql
-    container_name: mysql_container
+    image: postgres:13
+    container_name: postgresql_container
     restart: always
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      - MYSQL_ROOT_PASSWORD=password1
-      - MYSQL_USER=user1
-      - MYSQL_PASSWORD=password1
-      - MYSQL_DATABASE=user1
+      - NODE_ENV=development
+      - DB_USER=postgres
+      - DB_PW=password
+      - DB_TYPE=postgres
+      - DB_HOST=postgresql
   app:
     networks:
       - app-tier
@@ -30,6 +31,6 @@ services:
     ports:
       - "3000:3000"
     links:
-      - mysql
+      - postgresql
     depends_on:
-      - mysql
+      - postgresql

@@ -4,9 +4,17 @@
     "password": "password",
     "database": "postgres",
     "host": "postgresql",
-    "port": 5432,
     "dialect": "postgres",
-    "operatorsAliases": false
+    "define": {
+      "underscored": false,
+      "freezeTableName": false,
+      "charset": "utf8",
+      "dialectOptions": {
+        "collate": "utf8_general_ci"
+      },
+      "timestamps": true,
+      "paranoid": true
+    }
   },
   "test": {
     "username": "root",

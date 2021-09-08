@@ -1,0 +1,30 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "## Getting Started ##### You need to install docker from Docker(https://www.docker.com/). ##### git clone https://github.com/OdysseyJ/web/  << clone repository on your computer ##### docker pull mysql ##### docker-compose up --build << if you want to start server ##### docker-compose down << if you want to close server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OdysseyJ/web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OdysseyJ/web/issues"
+  },
+  "homepage": "https://github.com/OdysseyJ/web#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^4.6.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.0.0",
+    "pg": "^8.7.1",
+    "sequelize": "^5.22.4",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {}
+}
